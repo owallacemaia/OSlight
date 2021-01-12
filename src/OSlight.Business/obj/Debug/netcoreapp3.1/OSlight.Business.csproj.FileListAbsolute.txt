@@ -1,0 +1,9 @@
+D:\Projects\OSlight\src\OSlight.Business\bin\Debug\netcoreapp3.1\OSlight.Business.deps.json
+D:\Projects\OSlight\src\OSlight.Business\bin\Debug\netcoreapp3.1\OSlight.Business.dll
+D:\Projects\OSlight\src\OSlight.Business\bin\Debug\netcoreapp3.1\OSlight.Business.pdb
+D:\Projects\OSlight\src\OSlight.Business\obj\Debug\netcoreapp3.1\OSlight.Business.csprojAssemblyReference.cache
+D:\Projects\OSlight\src\OSlight.Business\obj\Debug\netcoreapp3.1\OSlight.Business.AssemblyInfoInputs.cache
+D:\Projects\OSlight\src\OSlight.Business\obj\Debug\netcoreapp3.1\OSlight.Business.AssemblyInfo.cs
+D:\Projects\OSlight\src\OSlight.Business\obj\Debug\netcoreapp3.1\OSlight.Business.csproj.CoreCompileInputs.cache
+D:\Projects\OSlight\src\OSlight.Business\obj\Debug\netcoreapp3.1\OSlight.Business.dll
+D:\Projects\OSlight\src\OSlight.Business\obj\Debug\netcoreapp3.1\OSlight.Business.pdb

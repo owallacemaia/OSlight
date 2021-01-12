@@ -1,0 +1,15 @@
+D:\Projects\OSlight\src\OSlight.Data\bin\Debug\netcoreapp3.1\OSlight.Business.dll
+D:\Projects\OSlight\src\OSlight.Data\obj\Debug\netcoreapp3.1\OSlight.Data.csprojAssemblyReference.cache
+D:\Projects\OSlight\src\OSlight.Data\obj\Debug\netcoreapp3.1\OSlight.Data.AssemblyInfoInputs.cache
+D:\Projects\OSlight\src\OSlight.Data\obj\Debug\netcoreapp3.1\OSlight.Data.AssemblyInfo.cs
+D:\Projects\OSlight\src\OSlight.Data\bin\Debug\netcoreapp3.1\OSlight.Data.deps.json
+D:\Projects\OSlight\src\OSlight.Data\bin\Debug\netcoreapp3.1\OSlight.Data.runtimeconfig.json
+D:\Projects\OSlight\src\OSlight.Data\bin\Debug\netcoreapp3.1\OSlight.Data.runtimeconfig.dev.json
+D:\Projects\OSlight\src\OSlight.Data\bin\Debug\netcoreapp3.1\OSlight.Data.dll
+D:\Projects\OSlight\src\OSlight.Data\bin\Debug\netcoreapp3.1\OSlight.Data.pdb
+D:\Projects\OSlight\src\OSlight.Data\bin\Debug\netcoreapp3.1\OSlight.Business.pdb
+D:\Projects\OSlight\src\OSlight.Data\obj\Debug\netcoreapp3.1\OSlight.Data.csproj.CoreCompileInputs.cache
+D:\Projects\OSlight\src\OSlight.Data\obj\Debug\netcoreapp3.1\OSlight.Data.csproj.CopyComplete
+D:\Projects\OSlight\src\OSlight.Data\obj\Debug\netcoreapp3.1\OSlight.Data.dll
+D:\Projects\OSlight\src\OSlight.Data\obj\Debug\netcoreapp3.1\OSlight.Data.pdb
+D:\Projects\OSlight\src\OSlight.Data\obj\Debug\netcoreapp3.1\OSlight.Data.genruntimeconfig.cache
