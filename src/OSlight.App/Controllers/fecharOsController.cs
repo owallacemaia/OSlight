@@ -25,12 +25,13 @@ namespace OSlight.App.Controllers
             _abrirOSRepository = abrirOSRepository;
         }
 
+        [Route("chamados-finalizados")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<FecharOSViewModel>>(await _fecharOSRepository.ObterTodosChamados()));
         }
 
-        [Route("fechar-chamado/id:guid")]
+        [Route("fechar-chamado/{id:guid}")]
         public IActionResult Create(Guid id)
         {
             var chamado = ObterChamado(id);

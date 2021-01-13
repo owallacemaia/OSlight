@@ -126,7 +126,7 @@ CREATE TABLE [EnderecoViewModel] (
     [Numero] nvarchar(50) NOT NULL,
     [Complemento] nvarchar(max) NULL,
     [Bairro] nvarchar(100) NOT NULL,
-    [Cep] nvarchar(8) NOT NULL,
+    [Cep] nvarchar(9) NOT NULL,
     [Cidade] nvarchar(100) NOT NULL,
     [Estado] nvarchar(50) NOT NULL,
     [AbrirOSId] uniqueidentifier NOT NULL,
@@ -165,7 +165,7 @@ CREATE UNIQUE INDEX [IX_FecharOSViewModel_AbrirOSId] ON [FecharOSViewModel] ([Ab
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20210112173421_InitIdentity', N'5.0.1');
+VALUES (N'20210113012638_InitIdentity', N'5.0.1');
 GO
 
 COMMIT;

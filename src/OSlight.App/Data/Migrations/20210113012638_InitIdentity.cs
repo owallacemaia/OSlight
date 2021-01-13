@@ -16,7 +16,7 @@ namespace OSlight.App.Data.Migrations
                     Numero = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Complemento = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Bairro = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Cep = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
+                    Cep = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     Cidade = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Estado = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     AbrirOSId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)

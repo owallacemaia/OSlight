@@ -11,7 +11,7 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <input type="hidden" asp-for="AbrirOSId" class="form-control" value="@ViewBag.AbrirOSId" />
+            <input asp-for="AbrirOSId" class="form-control" value="@ViewBag.AbrirOSId" />
 
             <div class="form-group">
                 <label asp-for="DataFechamento" class="control-label"></label>
@@ -21,7 +21,7 @@
 
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
-                <textarea asp-for="Descricao" id="mytextarea" placeholder="Escreva aqui o que foi feito..."></textarea>
+                <textarea rows="15" asp-for="Descricao" id="mytextarea" placeholder="Escreva aqui o que foi feito..."></textarea>
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
 

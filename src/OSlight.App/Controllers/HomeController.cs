@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OSlight.App.Models;
+using OSlight.App.ViewModels;
+using OSlight.Business.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,11 +14,16 @@ namespace OSlight.App.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        protected readonly IFecharOSRepository _fecharOSRepository;
+        protected readonly IAbrirOSRepository _abrirOSRepository;
+        protected readonly IMapper _mapper;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(
+            IFecharOSRepository fecharOSRepository,
+            IAbrirOSRepository abrirOSRepository)
         {
-            _logger = logger;
+            _fecharOSRepository = fecharOSRepository;
+            _abrirOSRepository = abrirOSRepository;
         }
 
         public IActionResult Index()
