@@ -18,13 +18,6 @@ namespace OSlight.Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(50)");
 
-            builder.Property(c => c.Cep)
-                .IsRequired()
-                .HasColumnType("varchar(9)");
-
-            builder.Property(c => c.Complemento)
-                .HasColumnType("varchar(250)");
-
             builder.Property(c => c.Bairro)
                 .IsRequired()
                 .HasColumnType("varchar(100)");

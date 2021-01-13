@@ -5,7 +5,6 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-
 <div class="alert alert-danger" role="alert">Certeza que deseja exluir o  chamado <b>@Model.Titulo</b></div>
 <div>
     <dl class="row">
@@ -30,7 +29,6 @@
         <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.Status)
         </dt>
-
         @if (Model.Status == 1)
         {
             <dd class="col-sm-10">Aberto</dd>
@@ -45,7 +43,7 @@
     </dl>
     <br />
     <div class="col-sm-10">
-        <textarea rows="15" id="mytextarea"> @Model.Descricao </textarea>
+        <textarea style="resize: none" rows="15" id="descricao"> @Model.Descricao </textarea>
     </div>
     <br />
     <h3>Endereço</h3>
@@ -55,7 +53,7 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Excluir" class="btn btn-danger" />
-        <a class="btn btn-info" asp-action="Index">Voltar</a>
+        <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
     </form>
 </div>
 
@@ -63,7 +61,7 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script type="text/javascript">
         tinymce.init({
-            selector: '#mytextarea'
+            selector: '#descricao'
         });
     </script>
 }

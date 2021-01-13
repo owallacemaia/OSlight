@@ -19,15 +19,8 @@ using OSlight.App;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "D:\Projects\OSlight\src\OSlight.App\Views\_ViewImports.cshtml"
-using OSlight.App.Models;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f954de3bb4d56e1473997894211a6516e7471ec2", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4de6c6309540849cb57bcb4889d25ea2e500f1df", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

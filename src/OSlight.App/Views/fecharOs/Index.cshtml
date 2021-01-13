@@ -7,8 +7,16 @@
 
 <h3>@ViewData["Title"]</h3>
 <hr />
-<div>
-    <a class="btn btn-warning" asp-controller="abrirOS" asp-action="Index">Ver Chamados Abertos</a>
+<div class="row">
+    <div class="col-sm-2">
+        <a class="btn btn-warning" asp-controller="abrirOS" asp-action="Index">Abertos</a>  
+    </div>
+    <div class="col-sm-10">
+        <a class="btn btn-info"><span class="fa fa-search"></span></a> Detalhes do Chamado |
+        <a class="btn btn-warning"><span class="fa fa-pen-alt"></span></a> Editar Chamado |
+        <a class="btn btn-danger"><span class="fa fa-trash-alt"></span></a> Excluir Chamado |
+        <a class="btn btn-success"><span class="fa fa-edit"></span></a> Editar Chamado Finalizado
+    </div>
 </div>
 <br />
 <hr />
@@ -49,7 +57,8 @@
                 </th>
                 <td>
                     <a class="btn btn-info" asp-controller="abrirOs" asp-action="Details" asp-route-id="@item.AbrirOSId"><span class="fa fa-search"></span></a>
-                    <a class="btn btn-warning" asp-controller="fecharOs" asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-edit"></span></a>
+                    <a class="btn btn-warning" asp-controller="abrirOs" asp-action="Edit" asp-route-id="@item.AbrirOSId"><span class="fa fa-pen-alt"></span></a>
+                    <a class="btn btn-success" asp-controller="fecharOs" asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-edit"></span></a>
                     <a class="btn btn-danger" asp-controller="abrirOs" asp-action="Delete" asp-route-id="@item.AbrirOSId"><span class="fa fa-trash-alt"></span></a>
                 </td>
             </tr>

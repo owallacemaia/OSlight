@@ -32,8 +32,6 @@ namespace OSlight.Data.Migrations
                     AbrirOSId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Logradouro = table.Column<string>(type: "varchar(200)", nullable: false),
                     Numero = table.Column<string>(type: "varchar(50)", nullable: false),
-                    Complemento = table.Column<string>(type: "varchar(250)", nullable: true),
-                    Cep = table.Column<string>(type: "varchar(9)", nullable: false),
                     Bairro = table.Column<string>(type: "varchar(100)", nullable: false),
                     Cidade = table.Column<string>(type: "varchar(100)", nullable: false),
                     Estado = table.Column<string>(type: "varchar(50)", nullable: false)

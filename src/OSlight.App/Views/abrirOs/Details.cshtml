@@ -5,7 +5,6 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-
 <div>
     <hr />
     <dl class="row">
@@ -30,7 +29,6 @@
         <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.Status)
         </dt>
-
         @if (Model.Status == 1)
         {
             <dd class="col-sm-10">Aberto</dd>
@@ -45,14 +43,13 @@
     </dl>
     <br />
     <div class="col-sm-10">
-        <textarea rows="15" id="descricaoini"> @Model.Descricao </textarea>
+        <textarea style="resize: none" rows="15" id="descricaoini"> @Model.Descricao </textarea>
     </div>
     <br />
     <h3>Endereço</h3>
     <hr />
     <partial name="_ListarEndereco" />
     <hr />
-
     @if (Model.Status == 2)
     {
         <div>
@@ -64,11 +61,9 @@
     <hr />
     <div>
         <a class="btn btn-dark" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
-        <a class="btn btn-info" asp-action="Index">Voltar</a>
+        <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
     </div>
 </div>
-
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

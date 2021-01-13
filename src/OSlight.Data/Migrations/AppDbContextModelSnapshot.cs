@@ -65,16 +65,9 @@ namespace OSlight.Data.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("Cep")
-                        .IsRequired()
-                        .HasColumnType("varchar(9)");
-
                     b.Property<string>("Cidade")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Complemento")
-                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("Estado")
                         .IsRequired()

@@ -14,12 +14,14 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label style="font-weight: bold;" asp-for="Status" class="control-label"></label>
-                @if(Model.Status == 1)
+                @if (Model.Status == 1)
                 {
+                    <input value="1" type="hidden" asp-for="Status" />
                     <p>Aberto</p>
                 }
                 else
                 {
+                    <input value="2" type="hidden" asp-for="Status" />
                     <p>Fechado</p>
                 }
             </div>
@@ -45,13 +47,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label> <br />
-                <textarea rows="15" asp-for="Descricao" id="mytextarea"> @Model.Descricao </textarea>
+                <textarea style="resize: none" rows="15" asp-for="Descricao" id="descricao"> @Model.Descricao </textarea>
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <partial name="_ListarEndereco" />
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-success" />
-                <a class="btn btn-info" asp-action="Index">Voltar</a>
+                <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
             </div>
         </form>
     </div>
@@ -61,7 +63,7 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 <script type="text/javascript">
         tinymce.init({
-            selector: '#mytextarea'
+            selector: '#descricao'
         });
 </script>
 }

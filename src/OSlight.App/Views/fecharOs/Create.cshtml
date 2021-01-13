@@ -10,21 +10,17 @@
     <div class="col-md-10">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <input asp-for="AbrirOSId" class="form-control" value="@ViewBag.AbrirOSId" />
-
+            <input type="hidden" asp-for="AbrirOSId" class="form-control" value="@ViewBag.AbrirOSId" />
             <div class="form-group">
                 <label asp-for="DataFechamento" class="control-label"></label>
                 <input type="date" readonly asp-for="DataFechamento" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control" />
                 <span asp-validation-for="DataFechamento" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label"></label>
-                <textarea rows="15" asp-for="Descricao" id="mytextarea" placeholder="Escreva aqui o que foi feito..."></textarea>
+                <textarea style="resize: none" style="resize: none" rows="15" asp-for="Descricao" id="descricao" placeholder="Escreva aqui o que foi feito..."></textarea>
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <input type="submit" value="Finalizar" class="btn btn-success" />
                 <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
@@ -37,7 +33,7 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
    <script>
        tinymce.init({
-           selector: '#mytextarea'
+           selector: '#descricao'
        });
    </script>
 }

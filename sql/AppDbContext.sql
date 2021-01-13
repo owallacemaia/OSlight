@@ -28,8 +28,6 @@ CREATE TABLE [Enderecos] (
     [AbrirOSId] uniqueidentifier NOT NULL,
     [Logradouro] varchar(200) NOT NULL,
     [Numero] varchar(50) NOT NULL,
-    [Complemento] varchar(250) NULL,
-    [Cep] varchar(9) NOT NULL,
     [Bairro] varchar(100) NOT NULL,
     [Cidade] varchar(100) NOT NULL,
     [Estado] varchar(50) NOT NULL,
@@ -55,7 +53,7 @@ CREATE UNIQUE INDEX [IX_fecharOs_AbrirOSId] ON [fecharOs] ([AbrirOSId]);
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20210113012726_InitApp', N'5.0.1');
+VALUES (N'20210113140453_InitApp', N'5.0.1');
 GO
 
 COMMIT;

@@ -10,7 +10,7 @@ using OSlight.Data.Context;
 namespace OSlight.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210113012726_InitApp")]
+    [Migration("20210113140453_InitApp")]
     partial class InitApp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,16 +67,9 @@ namespace OSlight.Data.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("Cep")
-                        .IsRequired()
-                        .HasColumnType("varchar(9)");
-
                     b.Property<string>("Cidade")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Complemento")
-                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("Estado")
                         .IsRequired()

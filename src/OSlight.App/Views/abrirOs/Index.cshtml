@@ -5,10 +5,20 @@
 
 <h3>@ViewData["Title"]</h3>
 <hr />
-<div>
-    <a class="btn btn-info" asp-action="Create">Abrir Chamado</a>
-    <a class="btn btn-warning" asp-controller="fecharOS" asp-action="Index">Ver Chamados Finalizados</a>
+
+<div class="row">
+    <div class="col-sm-4">
+        <a class="btn btn-info" asp-action="Create">Abrir Chamado</a>
+        <a class="btn btn-warning" asp-controller="fecharOS" asp-action="Index">Finalizados</a>
+    </div>
+    <div class="col-sm-8">
+        <a class="btn btn-info"><span class="fa fa-search"></span></a> Detalhes do Chamado |
+        <a class="btn btn-warning"><span class="fa fa-pen-alt"></span></a> Editar Chamado |
+        <a class="btn btn-danger"><span class="fa fa-trash-alt"></span></a> Excluir Chamado |
+        <a class="btn btn-success"><span class="fa fa-edit"></span></a> Fechar Chamado
+    </div>
 </div>
+
 <br />
 <hr />
 <h4>Chamados Abertos</h4>
@@ -55,7 +65,7 @@
                 <td>
                     <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id"><span class="fa fa-search"></span></a>
                     <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"><span class="fa fa-pen-alt"></span></a>
-                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id"><span class="fa fa-trash"></span></a>
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id"><span class="fa fa-trash-alt"></span></a>
                     <a asp-controller="FecharOs" asp-action="Create" class="btn btn-success" asp-route-id="@item.Id"><span class="fa fa-edit"></span></a>
                 </td>
             }
