@@ -1,14 +1,17 @@
 ﻿@model IEnumerable<OSlight.App.ViewModels.AbrirOSViewModel>
-
 @{
     ViewData["Title"] = "Lista de Chamados";
 }
 
-<h1>@ViewData["Title"]</h1>
-
-<p>
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div>
     <a class="btn btn-info" asp-action="Create">Abrir Chamado</a>
-</p>
+    <a class="btn btn-warning" asp-controller="fecharOS" asp-action="Index">Ver Chamados Finalizados</a>
+</div>
+<br />
+<hr />
+<h4>Chamados Abertos</h4>
 <table class="table table-hover text-center">
     <thead class="thead-dark ">
         <tr>
@@ -30,30 +33,32 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeReclamante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroPoste)
-            </td>
             @if (item.Status == 1)
             {
-                <td>Aberto em @Html.DisplayFor(modelItem => item.DataAbertura)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeReclamante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroPoste)
+                </td>
+                @if (item.Status == 1)
+                {
+                    <td>Aberto em @Html.DisplayFor(modelItem => item.DataAbertura)</td>
+                }
+                else if (item.Status == 2)
+                {
+                    <td>Fechado em @Html.DisplayFor(modelItem => item.FecharOS.DataFechamento)</td>
+                }
+                <td>
+                    <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id"><span class="fa fa-search"></span></a>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"><span class="fa fa-pen-alt"></span></a>
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id"><span class="fa fa-trash"></span></a>
+                    <a asp-controller="FecharOs" asp-action="Create" class="btn btn-success" asp-route-id="@item.Id"><span class="fa fa-edit"></span></a>
+                </td>
             }
-            else
-            {
-                <td></td>
-                <td>Fechado em @Html.DisplayFor(modelItem => item.FecharOS.DataFechamento)</td>
-            }
-            <td>
-                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id"><span class="fa fa-search"></span></a>
-                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id"><span class="fa fa-pen-alt"></span></a>
-                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id"><span class="fa fa-trash"></span></a>
-                <a asp-action="FecharChamado" class="btn btn-success" asp-route-id="@item.Id"><span class="fa fa-edit"></span></a>
-            </td>
         </tr>
 }
     </tbody>

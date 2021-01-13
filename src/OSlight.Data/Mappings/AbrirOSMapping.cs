@@ -30,8 +30,7 @@ namespace OSlight.Data.Mappings
                 .WithOne(p => p.AbrirOS);
 
             builder.HasOne(p => p.FecharOS)
-                .WithOne(p => p.AbrirOS)
-                .HasForeignKey<FecharOS>(p => p.AbrirOSId);
+                .WithOne(p => p.AbrirOS);
 
             builder.ToTable("AbrirOS");
         }

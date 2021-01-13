@@ -10,7 +10,7 @@ using OSlight.App.Data;
 namespace OSlight.App.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210112020243_InitIdentity")]
+    [Migration("20210112173421_InitIdentity")]
     partial class InitIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

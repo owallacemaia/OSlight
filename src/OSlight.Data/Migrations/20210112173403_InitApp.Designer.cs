@@ -10,7 +10,7 @@ using OSlight.Data.Context;
 namespace OSlight.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210112020142_InitApp")]
+    [Migration("20210112173403_InitApp")]
     partial class InitApp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using OSlight.App.Data;
 using OSlight.App.ViewModels;
 using OSlight.Business.Interfaces;
 using OSlight.Business.Models;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace OSlight.App.Controllers
 {
@@ -17,31 +13,29 @@ namespace OSlight.App.Controllers
     {
         private readonly IAbrirOSRepository _abrirOSRepository;
         private readonly IEnderecoRepository _enderecoRepository;
-        private readonly IFecharOSRepository _fecharOSRepository;
         private readonly IMapper _mapper;
 
-        public abrirOsController(IAbrirOSRepository abrirOSRepository,
-                                 IMapper iMapper,
-                                 IEnderecoRepository enderecoRepositoy,
-                                 IFecharOSRepository fecharOSRepository)
+        public abrirOsController(
+            IAbrirOSRepository abrirOSRepository,
+            IMapper iMapper,
+            IEnderecoRepository enderecoRepositoy)
         {
             _abrirOSRepository = abrirOSRepository;
             _mapper = iMapper;
             _enderecoRepository = enderecoRepositoy;
-           _fecharOSRepository = fecharOSRepository;
         }
 
         [Route("lista-de-chamados")]
         public async Task<IActionResult> Index()
         {
-            return View(_mapper.Map<IEnumerable<AbrirOSViewModel>>(await _abrirOSRepository.ObterTodos()));
+            return View(_mapper.Map<IEnumerable<AbrirOSViewModel>>(await _abrirOSRepository.ObterTodosChamados()));
         }
 
         [Route("dados-do-chamado/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
-            var abrirOsViewModel = await ObterEndereco(id);
-            if (abrirOsViewModel == null) return NotFound(); 
+            var abrirOsViewModel = await ObterChamado(id);
+            if (abrirOsViewModel == null) return NotFound();
             return View(abrirOsViewModel);
         }
 
@@ -57,10 +51,8 @@ namespace OSlight.App.Controllers
         public async Task<IActionResult> Create(AbrirOSViewModel abrirOSViewModel)
         {
             if (!ModelState.IsValid) return View(abrirOSViewModel);
-
             var abriros = _mapper.Map<AbrirOS>(abrirOSViewModel);
             await _abrirOSRepository.Adicionar(abriros);
-
             return RedirectToAction("Index");
         }
 
@@ -69,7 +61,6 @@ namespace OSlight.App.Controllers
         {
             var abrirOsViewModel = await ObterEndereco(id);
             if (abrirOsViewModel == null) return NotFound();
-       
             return View(abrirOsViewModel);
         }
         [Route("editar-chamado/{id:guid}")]
@@ -78,34 +69,27 @@ namespace OSlight.App.Controllers
         public async Task<IActionResult> Edit(Guid id, AbrirOSViewModel abrirOSViewModel)
         {
             if (id != abrirOSViewModel.Id) return NotFound();
-
             if (!ModelState.IsValid) return View(abrirOSViewModel);
- 
             var abriros = _mapper.Map<AbrirOS>(abrirOSViewModel);
-
             await _abrirOSRepository.Atualizar(abriros);
-
             return RedirectToAction("Index");
         }
 
-        [Route("excluir-chamado/id:guid")]
+        [Route("excluir-chamado/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var abrirOsViewModel = await ObterEndereco(id);
-
-            if (abrirOsViewModel == null)  return NotFound();
-
+            if (abrirOsViewModel == null) return NotFound();
             return View(abrirOsViewModel);
         }
-        [Route("excluir-chamado/id:guid")]
+        [Route("excluir-chamado/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var abrirOsViewModel = ObterEndereco(id);
-
+            if (abrirOsViewModel == null) return NotFound();
             await _abrirOSRepository.Remover(id);
-
             return RedirectToAction("Index");
         }
 
@@ -113,11 +97,7 @@ namespace OSlight.App.Controllers
         public async Task<IActionResult> AtualizarEndereco(Guid id)
         {
             var chamado = await ObterEndereco(id);
-            if (chamado == null)
-            {
-                return NotFound();
-            }
-
+            if (chamado == null) return NotFound();
             return View("AtualizarEndereco", new AbrirOSViewModel { Endereco = chamado.Endereco });
         }
 
@@ -129,27 +109,9 @@ namespace OSlight.App.Controllers
             ModelState.Remove("Descricao");
             ModelState.Remove("NumeroPoste");
             ModelState.Remove("NomeReclamante");
-
             if (!ModelState.IsValid) return View("AtualizarEndereco");
-
             await _enderecoRepository.Atualizar(_mapper.Map<Endereco>(abrirOSViewModel.Endereco));
-
-            return RedirectToAction("Edit", new { id = abrirOSViewModel.Endereco.AbrirOSId});
-        }
-
-        public async Task<IActionResult> FecharChamado(Guid id)
-        {
-            var chamado = await ObterChamado(id);
-            if (chamado == null) return NotFound();
-            return View("FecharChamado", new AbrirOSViewModel { FecharOS = chamado.FecharOS });
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> FecharChamado(AbrirOSViewModel abrirOSViewModel)
-        {
-            if (!ModelState.IsValid) return View("FecharChamado");
-            await _fecharOSRepository.Atualizar(_mapper.Map<FecharOS>(abrirOSViewModel.FecharOS));
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit", new { id = abrirOSViewModel.Endereco.AbrirOSId });
         }
 
         private async Task<AbrirOSViewModel> ObterEndereco(Guid id)
@@ -161,5 +123,6 @@ namespace OSlight.App.Controllers
         {
             return _mapper.Map<AbrirOSViewModel>(await _abrirOSRepository.ObterChamado(id));
         }
+
     }
 }

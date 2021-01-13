@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace OSlight.App.ViewModels
         [StringLength(50, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 1)]
         public string Numero { get; set; }
 
+        [DisplayName("Referencia")]
         public string Complemento { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]

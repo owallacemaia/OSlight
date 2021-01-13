@@ -1,0 +1,17 @@
+﻿@model OSlight.App.ViewModels.AbrirOSViewModel
+
+<div>
+    <hr />
+
+    <div class="row">
+        <div class="col-sm-8">
+            <label style="font-weight: bold;" asp-for="FecharOS.DataFechamento"></label>
+            <input class="form-control" asp-for="FecharOS.DataFechamento" />
+        </div>
+        <div class="col-sm-8">
+            <label style="font-weight: bold;" asp-for="FecharOS.Descricao"></label>
+            <textarea id="descricaofinal" asp-for="FecharOS.Descricao">@Model.FecharOS.Descricao</textarea>
+        </div>
+    </div>
+</div>
+

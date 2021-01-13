@@ -7,6 +7,7 @@
 <h1>@ViewData["Title"]</h1>
 
 <div>
+    <hr />
     <dl class="row">
         <dt class="col-sm-4">
             @Html.DisplayNameFor(model => model.Titulo)
@@ -44,15 +45,25 @@
     </dl>
     <br />
     <div class="col-sm-10">
-        <textarea id="mytextarea"> @Model.Descricao </textarea>
+        <textarea id="descricaoini"> @Model.Descricao </textarea>
     </div>
     <br />
     <h3>Endereço</h3>
     <hr />
     <partial name="_ListarEndereco" />
     <hr />
+
+    @if (Model.Status == 2)
+    {
+        <div>
+            <h4>Detalhes da finalização do chamado</h4>
+            <partial name="../fecharOS/_Details" />
+        </div>
+    }
+    <br />
+    <hr />
     <div>
-        <a class="btn btn-dark" asp-action="Edit" asp-route-id="@Model.Id">Editar</a> 
+        <a class="btn btn-dark" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
         <a class="btn btn-info" asp-action="Index">Voltar</a>
     </div>
 </div>
@@ -63,7 +74,10 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script type="text/javascript">
         tinymce.init({
-            selector: '#mytextarea'
+            selector: '#descricaoini'
+        });
+        tinymce.init({
+            selector: '#descricaofinal'
         });
     </script>
 }

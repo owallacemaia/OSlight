@@ -192,4 +192,7 @@ D:\Projects\OSlight\src\OSlight.App\obj\Debug\net5.0\Razor\Views\abrirOs\_Endere
 D:\Projects\OSlight\src\OSlight.App\bin\Debug\net5.0\libman.json
 D:\Projects\OSlight\src\OSlight.App\obj\Debug\net5.0\Razor\Views\abrirOs\_ListarEndereco.cshtml.g.cs
 D:\Projects\OSlight\src\OSlight.App\obj\Debug\net5.0\Razor\Views\abrirOs\AtualizarEndereco.cshtml.g.cs
-D:\Projects\OSlight\src\OSlight.App\obj\Debug\net5.0\Razor\Views\abrirOs\FecharChamado.cshtml.g.cs
+D:\Projects\OSlight\src\OSlight.App\obj\Debug\net5.0\Razor\Views\FecharOs\Create.cshtml.g.cs
+D:\Projects\OSlight\src\OSlight.App\obj\Debug\net5.0\Razor\Views\FecharOs\Edit.cshtml.g.cs
+D:\Projects\OSlight\src\OSlight.App\obj\Debug\net5.0\Razor\Views\FecharOs\Index.cshtml.g.cs
+D:\Projects\OSlight\src\OSlight.App\obj\Debug\net5.0\Razor\Views\fecharOs\_Details.cshtml.g.cs

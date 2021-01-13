@@ -14,5 +14,6 @@ namespace OSlight.App.Data
         {
         }
         public DbSet<OSlight.App.ViewModels.AbrirOSViewModel> AbrirOSViewModel { get; set; }
+        public DbSet<OSlight.App.ViewModels.FecharOSViewModel> FecharOSViewModel { get; set; }
     }
 }

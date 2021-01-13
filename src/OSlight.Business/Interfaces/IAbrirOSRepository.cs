@@ -10,5 +10,6 @@ namespace OSlight.Business.Interfaces
     {
         Task<AbrirOS> ObterEnderecoOs(Guid id);
         Task<AbrirOS> ObterChamado(Guid id);
+        Task<IEnumerable<AbrirOS>> ObterTodosChamados();
     }
 }

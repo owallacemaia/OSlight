@@ -1,0 +1,58 @@
+﻿@model IEnumerable<OSlight.App.ViewModels.FecharOSViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Chamados Finalizados";
+}
+
+
+<h3>@ViewData["Title"]</h3>
+<hr />
+<div>
+    <a class="btn btn-warning" asp-controller="abrirOS" asp-action="Index">Ver Chamados Abertos</a>
+</div>
+<br />
+<hr />
+<h4>Chamados Abertos</h4>
+<table class="table table-hover text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AbrirOS.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AbrirOS.NomeReclamante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AbrirOS.NumeroPoste)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFechamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.AbrirOS.Titulo)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.AbrirOS.NomeReclamante)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.AbrirOS.NumeroPoste)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.DataFechamento)
+                </th>
+                <td>
+                    <a class="btn btn-info" asp-controller="abrirOs" asp-action="Details" asp-route-id="@item.AbrirOSId"><span class="fa fa-search"></span></a>
+                    <a class="btn btn-warning" asp-controller="fecharOs" asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-edit"></span></a>
+                    <a class="btn btn-danger" asp-controller="abrirOs" asp-action="Delete" asp-route-id="@item.AbrirOSId"><span class="fa fa-trash-alt"></span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

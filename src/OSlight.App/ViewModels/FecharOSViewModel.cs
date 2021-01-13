@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OSlight.App.ViewModels
 {
@@ -19,8 +16,6 @@ namespace OSlight.App.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Descricao { get; set; }
 
-        [Editable(false)]
-        [ReadOnly(true)]
         [DataType(DataType.Date)]
         [DisplayName("Data de finalização de chamado")]
         public DateTime DataFechamento { get; set; }

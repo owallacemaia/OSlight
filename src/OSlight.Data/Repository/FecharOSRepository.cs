@@ -13,9 +13,16 @@ namespace OSlight.Data.Repository
     {
         public FecharOSRepository(AppDbContext context) : base(context) { }
         
-        public async Task<FecharOS> ObterChamado(Guid id)
+        public async Task<FecharOS> ObterFinalChamado(Guid id)
         {
             return await Db.fecharOs.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
+        }
+
+        public async Task<IEnumerable<FecharOS>> ObterTodosChamados()
+        {
+            return await Db.fecharOs.AsNoTracking()
+                .Include(a => a.AbrirOS)
+                .ToListAsync();
         }
     }
 }
